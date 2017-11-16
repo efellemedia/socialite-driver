@@ -25,7 +25,7 @@ class SocialiteProvider extends AbstractProvider implements ProviderInterface
      */
     protected function getAuthUrl($state)
     {
-        return $this->buildAuthUrlFromBase($this->$baseURL.'/oauth/authorize', $state);
+        return $this->buildAuthUrlFromBase($this->baseURL.'/oauth/authorize', $state);
     }
 
     /**
@@ -33,7 +33,7 @@ class SocialiteProvider extends AbstractProvider implements ProviderInterface
      */
     protected function getTokenUrl()
     {
-        return $this->$baseURL.'/oauth/token';
+        return $this->baseURL.'/oauth/token';
     }
 
     /**
@@ -41,7 +41,7 @@ class SocialiteProvider extends AbstractProvider implements ProviderInterface
      */
     protected function getUserByToken($token)
     {
-        $response = $this->getHttpClient()->get($this->$baseURL.'/api/user', [
+        $response = $this->getHttpClient()->get($this->baseURL.'/api/user', [
             'headers' => [
                 'Authorization' => 'Bearer '.$token,
             ],
