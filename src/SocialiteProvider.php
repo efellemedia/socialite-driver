@@ -10,8 +10,10 @@ class SocialiteProvider extends AbstractProvider implements ProviderInterface
 {
     /**
      * Base URL to the efelle accounts domain.
+     *
+     * @var string
      */
-    const BASE_URL = 'https://accounts.efelle.co';
+    protected $baseURL = 'https://accounts.efelle.co';
     
     /**
      * Unique Provider Identifier.
@@ -23,7 +25,7 @@ class SocialiteProvider extends AbstractProvider implements ProviderInterface
      */
     protected function getAuthUrl($state)
     {
-        return $this->buildAuthUrlFromBase(BASE_URL.'/oauth/authorize', $state);
+        return $this->buildAuthUrlFromBase($this->$baseURL.'/oauth/authorize', $state);
     }
 
     /**
@@ -31,7 +33,7 @@ class SocialiteProvider extends AbstractProvider implements ProviderInterface
      */
     protected function getTokenUrl()
     {
-        return BASE_URL.'/oauth/token';
+        return $this->$baseURL.'/oauth/token';
     }
 
     /**
@@ -39,7 +41,7 @@ class SocialiteProvider extends AbstractProvider implements ProviderInterface
      */
     protected function getUserByToken($token)
     {
-        $response = $this->getHttpClient()->get(BASE_URL.'/api/user', [
+        $response = $this->getHttpClient()->get($this->$baseURL.'/api/user', [
             'headers' => [
                 'Authorization' => 'Bearer '.$token,
             ],
