@@ -1,2 +1,1 @@
-# socialite-driver
-Socialite driver implementation with efelle accounts.
+# efelle Accounts OAuth 2 Provider for Laravel Socialite
