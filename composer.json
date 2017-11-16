@@ -1,0 +1,18 @@
+{
+    "name": "efellemedia/socialite-driver",
+    "description": "Efelle OAuth2 Provider for Laravel Socialite",
+    "license": "MIT",
+    "authors": [{
+        "name": "efelle creative",
+        "email": "shea@efelle.com"
+    }],
+    "require": {
+        "php": ">=5.5.9",
+        "socialiteproviders/manager": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Efelle\\SocialiteDriver\\": "src/"
+        }
+    }
+}
