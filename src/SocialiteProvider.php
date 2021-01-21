@@ -14,11 +14,11 @@ class SocialiteProvider extends AbstractProvider implements ProviderInterface
      * @var string
      */
     protected $baseURL = 'https://accounts.efelle.co';
-    
+
     /**
      * Unique Provider Identifier.
      */
-    const IDENTIFIER = 'EFELLE';
+    public const IDENTIFIER = 'EFELLE';
 
     /**
      * {@inheritdoc}
@@ -46,7 +46,7 @@ class SocialiteProvider extends AbstractProvider implements ProviderInterface
                 'Authorization' => 'Bearer '.$token,
             ],
         ]);
-        
+
         return json_decode($response->getBody(), true);
     }
 
