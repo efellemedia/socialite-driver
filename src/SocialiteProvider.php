@@ -62,6 +62,8 @@ class SocialiteProvider extends AbstractProvider implements ProviderInterface
             'name'       => $user['first_name'].' '.$user['last_name'],
             'nickname'   => $user['nickname'],
             'email'      => $user['email'],
+            'roles'    => $user['roles'],
+            'all_roles'      => $user['all_roles']
         ]);
     }
 
