@@ -13,7 +13,7 @@ class SocialiteProvider extends AbstractProvider implements ProviderInterface
      *
      * @var string
      */
-    protected $baseURL = 'http://accounts.test';
+    protected $baseURL = 'https://accounts.efelle.co';
     
     /**
      * Unique Provider Identifier.
